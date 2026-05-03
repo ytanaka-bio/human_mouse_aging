@@ -3,27 +3,18 @@ library(patchwork)
 library(dplyr)
 options(stringsAsFactors = FALSE)
 
-
-
 #load data
 human <- readRDS("C:/Users/annub/Downloads/Aging/human_cellchat/human.rds")
-
-# Reorder the 'cell_type' factor in meta.data
-human$CellType <- factor(human@meta.data$CellType, 
-                        levels = c("NE", "OPC", "OL", "MI", "AS", "EC"))
-human@meta.data$CellType <- human$CellType
-
 Idents(human) <- as.factor(human$CellType)
-Young<- subset(x=human, subset = Type == "Young") # "Old" for old age samples
 
+Young<- subset(x=human, subset = Type == "Young")
 
 data.input <- Young[["RNA"]]$data # normalized data matrix`
 labels <- Idents(Young)
 meta <- data.frame(labels = labels, row.names = names(labels))
 
 cellchat <- createCellChat(object = Young, group.by = "ident", assay = "RNA")
-CellChatDB <- CellChatDB.human # use CellChatDB.mouse if running on mouse data
-
+CellChatDB <- CellChatDB.human 
 showDatabaseCategory(CellChatDB)
 dplyr::glimpse(CellChatDB$interaction)
 
@@ -54,12 +45,10 @@ for (i in 1:nrow(mat)) {
   netVisual_circle(mat2, vertex.weight = groupSize, weight.scale = T, edge.weight.max = max(mat), title.name = rownames(mat)[i])
 }
 
-
 # Access all the signaling pathways showing significant communications
 pathways.show.all <- cellchat@netP$pathways
 # check the order of cell identity to set suitable vertex.receiver
 levels(cellchat@idents)
-
 
 # different diagrams for pathways
 pathways.show <- c("APP") 
