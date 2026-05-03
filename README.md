@@ -17,3 +17,6 @@ R code used for performing cellchat analysis is provided in
 
 Section 3- Subtype analysis-
 Further cell subtype analysis was performed on both human and mouse. Scripts for preprocessing and normalization of cell subtypes are described in Subtype.R file. Further analysis was performed on major cell types such as Oligodendrocyte Precursor cells (OPC), Oligodendrocyte cells (ODCs), Astrocyte, and Microglia (subtype_analysis.R). Monocle analysis (monocle.R) was carried out to infer cellular trajectories in ODCs. Additionally, a separate analysis was performed to clarify the relationship between OPCs and ODCs (subtype_analysis_ODCOPC.R).
+
+Section 4- ATAC analysis-
+Chromatin accessiblity analysis was performed on human. Scripts for ATAC-seq are described in analysis.R file. 
