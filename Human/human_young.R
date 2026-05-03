@@ -19,7 +19,7 @@ showDatabaseCategory(CellChatDB)
 dplyr::glimpse(CellChatDB$interaction)
 
 #use secreted signaling and cell-cell contact 
-CellChatDB.use <- subsetDB(CellChatDB,  search = c("Secreted Signaling", "Cell-Cell Contact"), key = "annotation") # use Secreted Signaling
+CellChatDB.use <- subsetDB(CellChatDB,  search = c("Secreted Signaling", "Cell-Cell Contact"), key = "annotation") 
 cellchat@DB <- CellChatDB.use
 cellchat <- subsetData(cellchat) 
 options(future.globals.maxSize = 5 * 1024^3)  # do parallel
