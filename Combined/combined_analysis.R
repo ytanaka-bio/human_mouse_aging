@@ -1,10 +1,4 @@
-library(Seurat)
-library(cowplot)
-library(magrittr)
 library(dplyr)
-library(ggplot2)
-
-library(SeuratWrappers)
 library(CellChat)
 library(patchwork)
 options(stringsAsFactors = FALSE)
