@@ -1,6 +1,10 @@
 # human_mouse_aging
+## Introduction
 Scripts used in Jeong et al. paper
+## Requirement
+All single-cell transcriptomic or chromatin profiling was performed using the R packages Seurat (v4.0.0.), or Signac (v1.1.1), GenomicRanges (v1.42.0), Harmony (v1.0), and SCTransform (v0.4.1), cellchat (v2.1.1)
 
+## Explanation
 Section 1- Preprocessing and Seurat analysis-
 In the preprocessing section, we provided script code to process single-cell RNA-Seq (scRNA-Seq) FASTQ data and perform Seurat preprocessing steps (seurat_pipeline.R). 
 Mouse gene symbols were converted to human orthologs using orthologous mapping using Biomart, followed by integration into a unified Seurat object (combine.R).
