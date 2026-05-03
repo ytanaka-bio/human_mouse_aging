@@ -4,7 +4,7 @@ library(dplyr)
 options(stringsAsFactors = FALSE)
 
 #load data
-mouse <- readRDS("C:/Users/annub/Downloads/Aging_YT/mouse/mouse.rds")
+mouse <- readRDS("C:/Users/annub/Downloads/Aging/mouse/mouse.rds")
 Idents(mouse) <- as.factor(mouse$CellType)
 
 Old<- subset(x=mouse, subset = Type == "Old")
@@ -19,7 +19,7 @@ showDatabaseCategory(CellChatDB)
 dplyr::glimpse(CellChatDB$interaction)
 
 #use secreted signaling and cell-cell contact 
-CellChatDB.use <- subsetDB(CellChatDB,  search = c("Secreted Signaling", "Cell-Cell Contact"), key = "annotation") # use Secreted Signaling
+CellChatDB.use <- subsetDB(CellChatDB,  search = c("Secreted Signaling", "Cell-Cell Contact"), key = "annotation") 
 cellchat@DB <- CellChatDB.use
 cellchat <- subsetData(cellchat) 
 options(future.globals.maxSize = 5 * 1024^3)  # do parallel
