@@ -56,8 +56,8 @@ netVisual_embeddingPairwiseZoomIn(cellchat, type = "structural", nCol = 2)
 rankSimilarity(cellchat, type = "functional")
 
 #compare the overall information flow of each signaling pathway
-gg1 <- rankNet(cellchat, mode = "comparison", measure = "weight", sources.use = NULL, targets.use = NULL, stacked = T, do.stat = TRUE)
-gg2 <- rankNet(cellchat, mode = "comparison", measure = "weight", sources.use = NULL, targets.use = NULL, stacked = F, do.stat = TRUE)
+gg1 <- rankNet(cellchat, mode = "comparison", measure = "weight", sources.use = NULL, targets.use = NULL, stacked = T, do.stat = FALSE)
+gg2 <- rankNet(cellchat, mode = "comparison", measure = "weight", sources.use = NULL, targets.use = NULL, stacked = F, do.stat = FALSE)
 gg1 + gg2
 
 library(ComplexHeatmap)
